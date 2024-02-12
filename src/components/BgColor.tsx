@@ -16,6 +16,14 @@ const BgColor: React.FC<BgColorProps> = ({ getColor }) => {
   const handleBgColor = () => {
     getColor(`#${genRanColor()}`);
   };
+  const handleGradient = () => {
+    const color1 = `#${genRanColor()}`;
+    const color2 = `#${genRanColor()}`;
+    const color3 = `#${genRanColor()}`;
+
+    const gradients = `linear-gradient(45deg, ${color1}, ${color2}, ${color3})`;
+    getColor(gradients);
+  };
 
   return (
     <>
@@ -25,7 +33,9 @@ const BgColor: React.FC<BgColorProps> = ({ getColor }) => {
           <button onClick={handleBgColor} className="panel-button">
             random color
           </button>
-          <button className="panel-button">random gradient</button>
+          <button onClick={handleGradient} className="panel-button">
+            random gradient
+          </button>
         </div>
       </div>
       <div className="line"></div>

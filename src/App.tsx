@@ -3,20 +3,16 @@ import "./App.css";
 import BgColor from "./components/BgColor";
 
 function App() {
-  const [bgColor, setBgColor] = useState("");
-  const getColor = (color: string) => {
-    setBgColor(color);
+  const [bgStyle, setBgStyle] = useState("");
+  const getColor = (style: string) => {
+    setBgStyle(style);
   };
-  console.log(bgColor);
 
   return (
     <div className="big-container">
       <div className="white-container">
         <h1>#LinkedIn Background Banner Maker</h1>
-        <div
-          className="dynamic-banner"
-          style={{ backgroundColor: `${bgColor}` }}
-        >
+        <div className="dynamic-banner" style={{ background: bgStyle }}>
           <div className="user-image"></div>
         </div>
 
