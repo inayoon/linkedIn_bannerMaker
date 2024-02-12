@@ -1,20 +1,14 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import BgColor from "./components/BgColor";
 
 function App() {
   const [bgColor, setBgColor] = useState("");
-  // useEffect(()=>{
-
-  // },[])
-  const handleBgColor = () => {
-    let letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
+  const getColor = (color: string) => {
     setBgColor(color);
   };
-  const handleBgRadiant = () => {};
+  console.log(bgColor);
+
   return (
     <div className="big-container">
       <div className="white-container">
@@ -27,18 +21,7 @@ function App() {
         </div>
 
         {/* background color picking zone */}
-        <div className="panel-container panel-first">
-          <div className="heading">Background-color</div>
-          <div className="buttons-container">
-            <button onClick={handleBgColor} className="panel-button">
-              random color
-            </button>
-            <button onClick={handleBgRadiant} className="panel-button">
-              random radiant
-            </button>
-          </div>
-        </div>
-        <div className="line"></div>
+        <BgColor getColor={getColor} />
 
         {/* keyword size picking zone */}
         <div className="panel-container panel-second">
