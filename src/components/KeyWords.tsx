@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Text } from "../App";
 
-const KeyWords = () => {
+interface KeywordsProps {
+  getText: (type: Text) => void;
+}
+
+const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
   const initialState = {
     size: "",
-    type: "",
+    style: "",
     text: "",
   };
   const [keyword, setKeyword] = useState(initialState);
+
+  useEffect(() => {
+    getText(keyword);
+  }, [keyword]);
+
   const handleSize = (px: string) => {
     setKeyword((prev) => ({
       ...prev,
@@ -16,17 +26,16 @@ const KeyWords = () => {
   const handleType = (style: string) => {
     setKeyword((prev) => ({
       ...prev,
-      type: style,
+      style: style,
     }));
   };
-  const handleText = (e: any) => {
+  const handleText = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setKeyword((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
-  console.log(keyword);
   return (
     <>
       {/* keyword size picking zone */}
@@ -67,7 +76,7 @@ const KeyWords = () => {
           <button
             onClick={() => handleType("fill")}
             className={`panel-button fill ${
-              keyword.type === "fill" ? "bold-text" : ""
+              keyword.style === "fill" ? "bold-text" : ""
             }`}
           >
             Fill
@@ -75,7 +84,7 @@ const KeyWords = () => {
           <button
             onClick={() => handleType("border")}
             className={`panel-button border ${
-              keyword.type === "border" ? "bold-text" : ""
+              keyword.style === "border" ? "bold-text" : ""
             }`}
           >
             Border
@@ -83,7 +92,7 @@ const KeyWords = () => {
           <button
             onClick={() => handleType("message")}
             className={`panel-button size message ${
-              keyword.type === "message" ? "bold-text" : ""
+              keyword.style === "message" ? "bold-text" : ""
             }`}
           >
             MSG

@@ -3,11 +3,21 @@ import "./App.css";
 import BgColor from "./components/BgColor";
 import KeyWords from "./components/KeyWords";
 
-function App() {
+export type Text = {
+  size: string;
+  style: string;
+  text: string;
+};
+const App: React.FC = () => {
   const [bgStyle, setBgStyle] = useState("");
+  const [text, setText] = useState<Text>({ size: "", style: "", text: "" });
   const getColor = (style: string) => {
     setBgStyle(style);
   };
+  const getText = (contents: Text) => {
+    setText(contents);
+  };
+  console.log(text);
 
   return (
     <div className="big-container">
@@ -18,10 +28,10 @@ function App() {
           <div style={{ fontSize: "22px" }}></div>
         </div>
         <BgColor getColor={getColor} />
-        <KeyWords />
+        <KeyWords getText={getText} />
       </div>
     </div>
   );
-}
+};
 
 export default App;
