@@ -10,14 +10,13 @@ export type Text = {
 };
 const App: React.FC = () => {
   const [bgStyle, setBgStyle] = useState("");
-  const [text, setText] = useState<Text>({ size: "", style: "", text: "" });
+  const [keywords, setKeywords] = useState<Text[]>([]);
   const getColor = (style: string) => {
     setBgStyle(style);
   };
   const getText = (contents: Text) => {
-    setText(contents);
+    setKeywords((prevKeywords) => [...prevKeywords, contents]);
   };
-  console.log(text);
 
   return (
     <div className="big-container">
@@ -25,7 +24,11 @@ const App: React.FC = () => {
         <h1>#LinkedIn Background Banner Maker</h1>
         <div className="dynamic-banner" style={{ background: bgStyle }}>
           <div className="user-image"></div>
-          <div style={{ fontSize: "22px" }}></div>
+          {keywords.map((keyword, index) => (
+            <span key={index} style={{ fontSize: keyword.size }}>
+              {keyword.text}
+            </span>
+          ))}
         </div>
         <BgColor getColor={getColor} />
         <KeyWords getText={getText} />

@@ -13,10 +13,6 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
   };
   const [keyword, setKeyword] = useState(initialState);
 
-  useEffect(() => {
-    getText(keyword);
-  }, [keyword]);
-
   const handleSize = (px: string) => {
     setKeyword((prev) => ({
       ...prev,
@@ -35,6 +31,10 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
       ...prev,
       [name]: value,
     }));
+  };
+  const handleEnter = () => {
+    getText(keyword);
+    setKeyword(initialState);
   };
   return (
     <>
@@ -112,18 +112,7 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
             value={keyword.text}
             placeholder="Enter your keywords"
           />
-          {/* 
-          <input
-            className="input-field"
-            type="text"
-            placeholder="Second-line keywords"
-          />
-
-          <input
-            className="input-field"
-            type="text"
-            placeholder="Last line keywords"
-          /> */}
+          <button onClick={handleEnter}>Enter</button>
         </div>
       </div>
     </>
