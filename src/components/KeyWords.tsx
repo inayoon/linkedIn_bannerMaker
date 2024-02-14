@@ -43,25 +43,25 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
         <div className="heading">Keyword-size</div>
         <div className="buttons-container">
           <button
-            onClick={() => handleSize("42px")}
+            onClick={() => handleSize("lg")}
             className={`panel-button size ${
-              keyword.size === "42px" ? "bold-text" : ""
+              keyword.size === "lg" ? "bold-text" : ""
             }`}
           >
             2XL
           </button>
           <button
-            onClick={() => handleSize("32px")}
+            onClick={() => handleSize("md")}
             className={`panel-button size ${
-              keyword.size === "32px" ? "bold-text" : ""
+              keyword.size === "md" ? "bold-text" : ""
             }`}
           >
             Md
           </button>
           <button
-            onClick={() => handleSize("22px")}
+            onClick={() => handleSize("sm")}
             className={`panel-button size ${
-              keyword.size === "22px" ? "bold-text" : ""
+              keyword.size === "sm" ? "bold-text" : ""
             }`}
           >
             Sm
@@ -74,25 +74,25 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
         <div className="heading">Keyword-type</div>
         <div className="buttons-container">
           <button
-            onClick={() => handleType("fill")}
+            onClick={() => handleType("keyword-fill")}
             className={`panel-button fill ${
-              keyword.style === "fill" ? "bold-text" : ""
+              keyword.style === "keyword-fill" ? "bold-text" : ""
             }`}
           >
             Fill
           </button>
           <button
-            onClick={() => handleType("border")}
+            onClick={() => handleType("keyword-border")}
             className={`panel-button border ${
-              keyword.style === "border" ? "bold-text" : ""
+              keyword.style === "keyword-border" ? "bold-text" : ""
             }`}
           >
             Border
           </button>
           <button
-            onClick={() => handleType("message")}
+            onClick={() => handleType("keyword-message")}
             className={`panel-button size message ${
-              keyword.style === "message" ? "bold-text" : ""
+              keyword.style === "keyword-message" ? "bold-text" : ""
             }`}
           >
             MSG
@@ -104,6 +104,7 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
       {/* input zone */}
       <div className="panel-container panel-second">
         <div className="buttons-container">
+          {/* first line input */}
           <input
             onChange={handleText}
             className="input-field"
@@ -112,6 +113,7 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
             value={keyword.text}
             placeholder="Enter your keywords"
           />
+
           <button onClick={handleEnter}>Enter</button>
         </div>
       </div>

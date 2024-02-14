@@ -17,21 +17,30 @@ const App: React.FC = () => {
   const getText = (contents: Text) => {
     setKeywords((prevKeywords) => [...prevKeywords, contents]);
   };
-
+  const handleReset = () => {
+    setKeywords([]);
+  };
+  console.log(keywords);
   return (
     <div className="big-container">
       <div className="white-container">
         <h1>#LinkedIn Background Banner Maker</h1>
         <div className="dynamic-banner" style={{ background: bgStyle }}>
           <div className="user-image"></div>
-          {keywords.map((keyword, index) => (
-            <span key={index} style={{ fontSize: keyword.size }}>
-              {keyword.text}
-            </span>
-          ))}
+          <div className="dynamic-contents">
+            {keywords.map((keyword, index) => (
+              <span
+                className={`${keyword.size} ${keyword.style} dynamic-keyword`}
+                key={index}
+              >
+                {keyword.text}
+              </span>
+            ))}
+          </div>
         </div>
         <BgColor getColor={getColor} />
         <KeyWords getText={getText} />
+        <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
