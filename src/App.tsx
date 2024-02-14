@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import html2canvas from "html2canvas";
 import "./App.css";
 import BgColor from "./components/BgColor";
 import KeyWords from "./components/KeyWords";
@@ -20,13 +21,35 @@ const App: React.FC = () => {
   const handleReset = () => {
     setKeywords([]);
   };
-  console.log(keywords);
+  const handleImage = async () => {
+    const target: HTMLElement | null =
+      document.querySelector(".dynamic-banner");
+
+    if (target) {
+      try {
+        const canvas = await html2canvas(target);
+        const imageUri = canvas.toDataURL("image/png");
+        downloadURI(imageUri, "banner.png");
+      } catch (error) {
+        console.error("Error generating image:", error);
+      }
+    }
+  };
+
+  const downloadURI = (uri: string, name: string) => {
+    const link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+  };
+
   return (
     <div className="big-container">
       <div className="white-container">
         <h1>#LinkedIn Background Banner Maker</h1>
         <div className="dynamic-banner" style={{ background: bgStyle }}>
-          <div className="user-image"></div>
+          <div className="user-image" data-html2canvas-ignore="true"></div>
           <div className="dynamic-contents">
             {keywords.map((keyword, index) => (
               <span
@@ -41,6 +64,7 @@ const App: React.FC = () => {
         <BgColor getColor={getColor} />
         <KeyWords getText={getText} />
         <button onClick={handleReset}>Reset</button>
+        <button onClick={handleImage}>Image Rendering . . </button>
       </div>
     </div>
   );
