@@ -36,6 +36,7 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
     getText(keyword);
     setKeyword(initialState);
   };
+
   return (
     <>
       {/* keyword size picking zone */}
@@ -70,7 +71,7 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
       </div>
 
       {/* keyword-type picking zone */}
-      <div className="panel-container panel-third">
+      <div className="panel-container panel-second">
         <div className="heading">Keyword-type</div>
         <div className="buttons-container">
           <button
@@ -99,11 +100,10 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
           </button>
         </div>
       </div>
-      <div className="line"></div>
 
       {/* input zone */}
-      <div className="panel-container panel-second">
-        <div className="buttons-container">
+      <div className="panel-container panel-third">
+        <div className="buttons-container gap-more">
           {/* first line input */}
           <input
             onChange={handleText}
@@ -113,10 +113,12 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
             value={keyword.text}
             placeholder="Enter your keywords"
           />
-
-          <button onClick={handleEnter}>Enter</button>
+          <button onClick={handleEnter} className="panel-button">
+            Enter
+          </button>
         </div>
       </div>
+      <div className="line"></div>
     </>
   );
 };

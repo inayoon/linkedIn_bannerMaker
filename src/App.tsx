@@ -63,8 +63,14 @@ const App: React.FC = () => {
         </div>
         <BgColor getColor={getColor} />
         <KeyWords getText={getText} />
-        <button onClick={handleReset}>Reset</button>
-        <button onClick={handleImage}>Image Rendering . . </button>
+        <div className="button-box">
+          <button onClick={handleReset} className="panel-button btn">
+            Reset
+          </button>
+          <button onClick={handleImage} className="panel-button btn">
+            Image Download{" "}
+          </button>
+        </div>
       </div>
     </div>
   );
