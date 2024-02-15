@@ -173,7 +173,7 @@ h1{
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left:5.7rem;
+  padding-left:7.8rem;
   align-items: flex-start;
 }
 
@@ -182,7 +182,8 @@ h1{
 .dynamic-keyword{
   display:flex;
   padding:4px;
-  margin-top: 3px; 
+  margin-top: 3.5px; 
+  margin-right:6px;
   align-self: flex-start;
   align-self: center;
   position:relative;
@@ -191,10 +192,11 @@ h1{
   background-color:#1f2937;
   border-radius: 36px;
   color:#fff;
+  font-weight: 500;
 }
 .keyword-border{
   border-radius: 36px;
-  border:  2px solid #1f2937;
+  border:  3.6px solid #1f2937;
   color:#1f2937;
   font-weight: 500;
 }
@@ -217,7 +219,6 @@ h1{
 }
 .lg{
   font-size: 2.3rem;
-  font-weight: 450;
   letter-spacing: -3px; 
 }
 .md{

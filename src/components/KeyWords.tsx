@@ -12,7 +12,6 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
     text: "",
   };
   const [keyword, setKeyword] = useState(initialState);
-
   const handleSize = (px: string) => {
     setKeyword((prev) => ({
       ...prev,
@@ -36,7 +35,6 @@ const KeyWords: React.FC<KeywordsProps> = ({ getText }) => {
     getText(keyword);
     setKeyword(initialState);
   };
-
   return (
     <>
       {/* keyword size picking zone */}
