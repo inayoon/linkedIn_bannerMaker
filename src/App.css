@@ -185,6 +185,7 @@ h1{
   margin-top: 3px; 
   align-self: flex-start;
   align-self: center;
+  position:relative;
 }
 .keyword-fill{
   background-color:#1f2937;
@@ -247,4 +248,16 @@ h1{
   background-color: #f1f5f9;
   transform: scale(1.10);
   border-radius: 15px;
+}
+
+.delete-emoji{
+  position: absolute;
+  font-size: 20px;
+  border-radius: 30%;
+  top:-0.9rem;
+  transition: all 150ms ease-out;
+}
+
+.delete-emoji:hover{
+  transform: rotate(15deg) scale(1.1);
 }

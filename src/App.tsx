@@ -12,6 +12,7 @@ export type Text = {
 const App: React.FC = () => {
   const [bgStyle, setBgStyle] = useState("");
   const [keywords, setKeywords] = useState<Text[]>([]);
+  const [deleteIndex, setDeleteIndex] = useState<number | null>(null);
   const getColor = (style: string) => {
     setBgStyle(style);
   };
@@ -43,7 +44,20 @@ const App: React.FC = () => {
     document.body.appendChild(link);
     link.click();
   };
-
+  const handleMouse = (i: number) => () => {
+    setDeleteIndex(i);
+  };
+  const handleMouseLeave = () => {
+    setDeleteIndex(null);
+  };
+  const handleDelete = (i: number) => () => {
+    setKeywords((prev) => {
+      const updatedKeywords = [...prev];
+      updatedKeywords.splice(i, 1);
+      return updatedKeywords;
+    });
+    setDeleteIndex(null);
+  };
   return (
     <div className="big-container">
       <div className="white-container">
@@ -53,10 +67,17 @@ const App: React.FC = () => {
           <div className="dynamic-contents">
             {keywords.map((keyword, index) => (
               <span
+                onMouseEnter={handleMouse(index)}
+                onMouseLeave={handleMouseLeave}
                 className={`${keyword.size} ${keyword.style} dynamic-keyword`}
                 key={index}
               >
                 {keyword.text}
+                {deleteIndex === index && (
+                  <span onClick={handleDelete(index)} className="delete-emoji">
+                    ⛔
+                  </span>
+                )}
               </span>
             ))}
           </div>
