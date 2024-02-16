@@ -1,8 +1,7 @@
-
-<img width="450" alt="bannerMaker_insertKeywords" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/94608f92-e55c-4865-95b6-46546eed878d"> | <img width="450" alt="bannerMaker_insertKeywords" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/062a3ebd-c2f7-4d48-8483-577d8e61b059">
---- |--- |
-
-
+<p align="center">
+<img width="427" alt="bannerMaker_fullscreenshot" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/94608f92-e55c-4865-95b6-46546eed878d">
+<img width="550" alt="bannerMaker_insertKeywords" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/062a3ebd-c2f7-4d48-8483-577d8e61b059">
+</p>
 
 </br>
 
@@ -29,6 +28,10 @@
 |                                                             1.  Add Keywords                                                               |                                                         **2. Delete Keywords**                                                             |
 | :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
 |  <img width="471" alt="bannerMaker_insertKeywords" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/ee711396-3b72-49f3-817e-b74694a83b0d">  |  <img width="471" alt="bannerMaker_deleteKeywords" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/d95b8d3d-97df-4963-84a6-a0d52667ec74">  |
+
+|                                                             **3.  Apply on LinkedIn Banner**                                                               |
+| :--------------------------------------------------------------------------------------------------------------------------------------: |
+|  <img width="650" alt="bannerMaker_insertKeywords" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/062a3ebd-c2f7-4d48-8483-577d8e61b059">  |
   
 <br/>
 
