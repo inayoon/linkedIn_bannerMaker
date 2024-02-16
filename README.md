@@ -1,5 +1,6 @@
 <p align="center">
-<img width="427" alt="bannerMaker_fullscreenshot" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/94608f92-e55c-4865-95b6-46546eed878d">
+<img width="427" alt="bannerMaker_fullscreenshot" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/94608f92-e55c-4865-95b6-46546eed878d">  <img width="562" alt="bannerMaker_applied" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/062a3ebd-c2f7-4d48-8483-577d8e61b059">
+
 </p>
 
 </br>
@@ -23,7 +24,16 @@
 
 <br/>
 
-## ✅Main Features 
+## ✅Main Screens and Features
+|                                                             1.  Add Keywords                                                               |                                                         **2. Delete Keywords**                                                             |
+| :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|  <img width="471" alt="bannerMaker_insertKeywords" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/ee711396-3b72-49f3-817e-b74694a83b0d">  |  <img width="471" alt="bannerMaker_deleteKeywords" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/d95b8d3d-97df-4963-84a6-a0d52667ec74">  |
+  
+<br/>
+
+---
+  
+<br/>
 
 > ### 1. Choosing from a variety of random background colors and random gradient 
 
@@ -56,11 +66,90 @@ const genRanColor = () => {
   };
 
 ```
+</details>
 
+---
 
+<br/>
 
+> ### 2. Customizing Keywords with Various Sizes and Styles
+
+<img width="500" alt="bannerMaker_customizing" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/9b992659-1817-431d-b9f7-8cdcd603adc9">
+
+<br/>
+
+---
+
+ <br/>   
+ 
+> ### 3. Deleting Individual Keywords or Resetting
+
+<img width="500" alt="bannerMaker_deleting" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/b9ee4920-0c67-4571-a8db-2fd80f58fa69">
+
+<br/>
+
+---
+
+ <br/>   
+ 
+> ### 4. Saving the Created Banner as a PNG File
+
+<img width="600" alt="bannerMaker_saving" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/0bf75c35-62ad-405b-a270-fbda04ec811d">
+<details>
+<summary><h3>Applying html2canvas lib to save the banner</h3></summary>
+<br/>
+
+- Utilize the `handleImage` function to locate and capture the content of an HTML element with the class `.dynamic-banner`, converting it into a PNG image. <br/>
+
+```Javascript
+
+/** App.tsx */
+import html2canvas from "html2canvas";
+
+  const handleImage = async () => {
+    const target: HTMLElement | null =
+      document.querySelector(".dynamic-banner");
+
+    if (target) {
+      try {
+        const canvas = await html2canvas(target);
+        const imageUri = canvas.toDataURL("image/png");
+        downloadURI(imageUri, "banner.png");
+      } catch (error) {
+        console.error("Error generating image:", error);
+      }
+    }
+  };
+
+  const downloadURI = (uri: string, name: string) => {
+    const link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+  };
+
+```
+</details>
+
+---
+
+<br/>
+
+## Challenges Faced During the Project Development
+ - Creating and applying custom types directly is still an area where I feel less comfortable and confident.
+ - While I've been accustomed to using Tailwind CSS, managing everything with raw CSS presented a challenge. Building a comprehensive structure with CSS remains a difficulty for me.
+<br/>
 
 ## Visual Draft Before Working on the Project
-<img width="650" alt="bannermaker_draft" src="https://github.com/inayoon/linkedin_bg_maker/assets/100747899/a3ad9a4b-3b8b-4ef1-8387-b960e7514d59">
+<img width="500" alt="bannermaker_draft" src="https://github.com/inayoon/linkedin_bg_maker/assets/100747899/a3ad9a4b-3b8b-4ef1-8387-b960e7514d59">
 
+---
+
+<br/>
+
+> ### Used Fonts
+  - [Pretendard](https://github.com/orioncactus/pretendard)
+
+<br/>
 
