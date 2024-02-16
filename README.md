@@ -1,5 +1,5 @@
 <p align="center">
-<img width="427" alt="bannerMaker_fullscreenshot" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/94608f92-e55c-4865-95b6-46546eed878d">  <img width="562" alt="bannerMaker_applied" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/062a3ebd-c2f7-4d48-8483-577d8e61b059">
+<img width="427" alt="bannerMaker_fullscreenshot" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/94608f92-e55c-4865-95b6-46546eed878d"> <img width="562" alt="bannerMaker_applied" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/062a3ebd-c2f7-4d48-8483-577d8e61b059">
 
 </p>
 
