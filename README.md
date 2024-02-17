@@ -145,7 +145,8 @@ import html2canvas from "html2canvas";
 <br/>
 
 ## Visual Draft Before Working on the Project
-<img width="500" alt="bannermaker_draft" src="https://github.com/inayoon/linkedin_bg_maker/assets/100747899/a3ad9a4b-3b8b-4ef1-8387-b960e7514d59">
+<img width="600" alt="bannerMaker_draft" src="https://github.com/inayoon/linkedIn_bannerMaker/assets/100747899/7aa2075f-a8be-43a7-96eb-0ab175a63c8e">
+
 
 ---
 
